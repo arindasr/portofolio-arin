@@ -12,13 +12,14 @@ function About() {
         </div>
         <div className="space-y-6 text-lg leading-8 text-black/70 dark:text-white/70">
           <p>
-            I am an aspiring Data Analyst with strong interests in data visualization, 
-            UI/UX design, and frontend development. I enjoy combining analytical thinking, 
-            creativity, and technical skills to create meaningful and user-centered digital experiences.
+           I am an aspiring Data Analyst, but I also have a strong interest in UI/UX design 
+          and frontend development. I enjoy exploring these different areas, bringing together 
+          analytical thinking and creative design. 
           </p>
           <p>
-            I enjoy transforming raw data into clear insights, interactive dashboards, and intuitive 
-            interfaces that help people understand information quickly and make better decisions with confidence.
+            While my main goal is uncovering insights from data to help drive decisions, 
+           I am equally passionate about designing and building intuitive, user-centered 
+          websites and applications.
           </p>
         </div>
       </div>

@@ -5,8 +5,8 @@ const projects = [
       "Designed a website that helps users discover and explore local UMKM businesses through an intuitive interface, clear navigation, and an accessible user experience.",
     tags: ["UI/UX", "Figma", "Prototype"],
     image: "/public/assets/teroka-app.png",
-    website: "https://teroka-app.vercel.app/",          // ← link live demo (gambar diklik ke sini)
-    github: "https://github.com/aliimndev/teroka-app.git",   // ← link repo GitHub (ikon Code ke sini)
+    website: "https://teroka-app.vercel.app/",
+    github: "https://github.com/aliimndev/teroka-app.git",
   },
   {
     title: "WeMoviesAI",
@@ -17,15 +17,7 @@ const projects = [
     website: "https://wemoviesai.vercel.app/",
     github: "https://github.com/aliimndev/capstone-project.git",
   },
-  {
-    title: "Competition Mobile App Design",
-    description:
-      "A mobile UI/UX design project shaped around clear user flows, accessible screens, and polished visual hierarchy.",
-    tags: ["Figma", "UI/UX", "Prototype"],
-    image: "https://placehold.co/600x400/1a1a1a/ffffff?text=Mobile+App+Design",
-    website: "",                                         // ← tidak ada live demo, gambar tidak bisa diklik
-    github: "https://github.com/arindasr/competition-app",
-  },
+  // Proyek "SOON" (Competition Mobile App Design) telah dihapus
 ];
 
 function Projects() {
@@ -51,11 +43,12 @@ function Projects() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        {/* Container diubah dari grid ke flex agar card dua item bisa di-center */}
+        <div className="mt-12 flex flex-wrap justify-center gap-5">
           {projects.map((project) => (
             <article
               key={project.title}
-              className="flex min-h-72 flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff]"
+              className="flex min-h-72 w-full flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff] lg:w-[calc(33.333%-0.833rem)]"
             >
               {/* Gambar – hanya menjadi link jika ada website */}
               {project.image &&

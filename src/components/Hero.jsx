@@ -12,11 +12,11 @@ function Hero() {
             Arinda Setyo Rini
           </h1>
           <p className="mt-6 text-2xl font-semibold text-black sm:text-3xl dark:text-white">
-            Aspiring Data Analyst
+            Computer Science Student
           </p>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-black/70 dark:text-white/70">
-            Passionate about data analytics, data visualization, UI/UX design,
-            and frontend development.
+            An aspiring Data Analyst with a strong interest in UI/UX design and frontend development.
+            Eager to learn, explore, and build meaningful digital experiences.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
