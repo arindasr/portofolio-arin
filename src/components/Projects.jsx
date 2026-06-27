@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const projects = [
   {
     title: "TEROKA",
@@ -28,29 +30,34 @@ function Projects() {
     >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div className="max-w-2xl">
+          <Reveal as="div" variant="left" className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
               Projects
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Things I've Built.
             </h2>
-          </div>
-          <a
+          </Reveal>
+          <Reveal
+            as="a"
+            delay={120}
             href="https://github.com/arindasr"
             target="_blank"
             rel="noreferrer"
             className="text-sm font-semibold underline decoration-black/30 underline-offset-4 transition hover:decoration-black dark:decoration-white/30 dark:hover:decoration-white"
           >
             View GitHub
-          </a>
+          </Reveal>
         </div>
 
         {/* Container diubah dari grid ke flex agar card dua item bisa di-center */}
         <div className="mt-12 flex flex-wrap justify-center gap-5">
-          {projects.map((project) => (
-            <article
+          {projects.map((project, index) => (
+            <Reveal
+              as="article"
               key={project.title}
+              variant="soft"
+              delay={index * 100}
               className="flex min-h-72 w-full flex-col justify-between border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[10px_10px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[10px_10px_0_#fff] lg:w-[calc(50%-0.625rem)]"
             >
               {/* Gambar – hanya menjadi link jika ada website */}
@@ -122,7 +129,7 @@ function Projects() {
                   </a>
                 )}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

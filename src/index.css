@@ -5,27 +5,75 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  background: #ffffff;
-  color: #000000;
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    margin: 0;
+    min-width: 320px;
+    background: #ffffff;
+    color: #000000;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    transition:
+        opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.reveal-left {
+    transform: translate3d(-28px, 0, 0);
+}
+
+.reveal-right {
+    transform: translate3d(28px, 0, 0);
+}
+
+.reveal-soft {
+    transform: translate3d(0, 18px, 0) scale(0.985);
+}
+
+.reveal.is-visible.reveal-left,
+.reveal.is-visible.reveal-right,
+.reveal.is-visible.reveal-soft {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reveal,
+    .reveal-left,
+    .reveal-right,
+    .reveal-soft {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 body:has(.dark) {
-  background: #09090b;
-  color: #fafafa;
+    background: #09090b;
+    color: #fafafa;
 }
 
 ::selection {
-  background: #000000;
-  color: #ffffff;
+    background: #000000;
+    color: #ffffff;
 }

@@ -1,27 +1,37 @@
+import Reveal from "./Reveal";
+
 function About() {
   return (
-    <section id="about" className="scroll-mt-24 border-t border-black/10 dark:border-white/10">
+    <section
+      id="about"
+      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+    >
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[0.8fr_1.2fr] md:px-8">
-        <div>
+        <Reveal as="div" variant="left">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
             About
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            Turning complex data into clear decisions.
+            Turning ideas into digital experiences and meaningful insights.
           </h2>
-        </div>
-        <div className="space-y-6 text-lg leading-8 text-black/70 dark:text-white/70">
+        </Reveal>
+        <Reveal
+          as="div"
+          delay={120}
+          className="space-y-6 text-lg leading-8 text-black/70 dark:text-white/70"
+        >
           <p>
-           I am an aspiring Data Analyst, but I also have a strong interest in UI/UX design 
-          and frontend development. I enjoy exploring these different areas, bringing together 
-          analytical thinking and creative design. 
+            I am passionate about Front-End Development, UI/UX Design, and Data
+            Analytics. I enjoy building responsive, user-centered digital
+            experiences by combining creativity and problem-solving.
           </p>
           <p>
-            While my main goal is uncovering insights from data to help drive decisions, 
-           I am equally passionate about designing and building intuitive, user-centered 
-          websites and applications.
+            Always eager to learn new technologies, I strive to create solutions
+            that combine functionality, usability, and creativity while
+            transforming data into meaningful insights that support better
+            decision-making.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

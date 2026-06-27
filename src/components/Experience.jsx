@@ -1,3 +1,4 @@
+import Reveal from "./Reveal";
 
 const experiences = [
   {
@@ -24,20 +25,26 @@ const experiences = [
 
 function Experience() {
   return (
-    <section id="experience" className="scroll-mt-24 border-t border-black/10 dark:border-white/10">
+    <section
+      id="experience"
+      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+    >
       <div className="mx-auto max-w-6xl px-5 py-24 md:px-8">
-        <div className="max-w-2xl">
+        <Reveal as="div" variant="left" className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
             Experience
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             That shaped my growth and skills.
           </h2>
-        </div>
+        </Reveal>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {experiences.map((experience, index) => (
-            <article
+            <Reveal
+              as="article"
               key={experience.title}
+              variant="soft"
+              delay={index * 90}
               className="border border-black/15 p-6 transition hover:-translate-y-1 hover:border-black hover:shadow-[8px_8px_0_#000] dark:border-white/15 dark:hover:border-white dark:hover:shadow-[8px_8px_0_#fff]"
             >
               <span className="text-sm font-semibold text-black/45 dark:text-white/45">
@@ -47,7 +54,7 @@ function Experience() {
               <p className="mt-3 leading-7 text-black/65 dark:text-white/65">
                 {experience.description}
               </p>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

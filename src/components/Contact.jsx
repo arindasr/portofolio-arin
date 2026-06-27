@@ -1,4 +1,5 @@
 import { BriefcaseBusiness, Camera, Code2, Mail } from "lucide-react";
+import Reveal from "./Reveal";
 
 const contacts = [
   {
@@ -25,9 +26,12 @@ const contacts = [
 
 function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 border-t border-black/10 dark:border-white/10">
+    <section
+      id="contact"
+      className="scroll-mt-24 border-t border-black/10 dark:border-white/10"
+    >
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-24 md:grid-cols-[0.9fr_1.1fr] md:px-8">
-        <div>
+        <Reveal as="div" variant="left">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-black/55 dark:text-white/55">
             Contact
           </p>
@@ -35,21 +39,24 @@ function Contact() {
             Let&apos;s connect and build something meaningful.
           </h2>
           <p className="mt-6 leading-7 text-black/65 dark:text-white/65">
-            Open to internship opportunities and collaborative projects involving
-            data analysis, visualization, user-centered design, and frontend development.
+            I'm open to freelance projects, collaborations, and opportunities to
+            create impactful digital experiences and meaningful insights.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid gap-4">
-          {contacts.map((contact) => {
+          {contacts.map((contact, index) => {
             const Icon = contact.icon;
 
             return (
-              <a
+              <Reveal
+                as="a"
                 key={contact.label}
                 href={contact.href}
                 target={contact.href.startsWith("http") ? "_blank" : undefined}
                 rel={contact.href.startsWith("http") ? "noreferrer" : undefined}
+                variant="soft"
+                delay={index * 90}
                 className="group flex flex-col justify-between gap-3 border border-black/15 p-5 transition hover:-translate-y-1 hover:border-black hover:bg-black hover:text-white dark:border-white/15 dark:hover:border-white dark:hover:bg-white dark:hover:text-black sm:flex-row sm:items-center"
               >
                 {/* Layout baru: logo di kiri, teks di kanan */}
@@ -57,7 +64,7 @@ function Contact() {
                   <Icon className="h-5 w-5 text-black/45 transition group-hover:text-white/70 dark:text-white/45 dark:group-hover:text-black/70" />
                   <span className="font-semibold">{contact.label}</span>
                 </div>
-              </a>
+              </Reveal>
             );
           })}
         </div>
